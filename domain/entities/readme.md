@@ -1,0 +1,1 @@
+# Put project domain entities in this place

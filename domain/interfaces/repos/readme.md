@@ -1,0 +1,1 @@
+# Put the repository interfaces of domain in this place
