@@ -11,6 +11,10 @@ const (
 	FieldName = "name"
 	// FieldPwd holds the string denoting the pwd field in the database.
 	FieldPwd = "pwd"
+	// FieldEmail holds the string denoting the email field in the database.
+	FieldEmail = "email"
+	// FieldAge holds the string denoting the age field in the database.
+	FieldAge = "age"
 	// Table holds the table name of the user in the database.
 	Table = "users"
 )
@@ -20,6 +24,8 @@ var Columns = []string{
 	FieldID,
 	FieldName,
 	FieldPwd,
+	FieldEmail,
+	FieldAge,
 }
 
 // ValidColumn reports if the column name is valid (part of the table columns).
@@ -33,8 +39,6 @@ func ValidColumn(column string) bool {
 }
 
 var (
-	// DefaultName holds the default value on creation for the "name" field.
-	DefaultName string
 	// IDValidator is a validator for the "id" field. It is called by the builders before save.
 	IDValidator func(int) error
 )

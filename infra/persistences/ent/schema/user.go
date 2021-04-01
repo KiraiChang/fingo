@@ -1,8 +1,10 @@
 package schema
 
 import (
+	"entgo.io/contrib/entgql"
 	"entgo.io/ent"
 	"entgo.io/ent/schema/field"
+	"github.com/KiraiChang/fingo/domain/entities"
 )
 
 // User holds the schema definition for the User entity.
@@ -16,7 +18,17 @@ func (User) Fields() []ent.Field {
 		field.Int("id").
 			Positive(),
 		field.String("name").
-			Default("unknown"),
+			Annotations(
+				entgql.OrderField(entities.UserNameField),
+			),
 		field.String("pwd"),
+		field.String("email").
+			Annotations(
+				entgql.OrderField(entities.UserEmailField),
+			),
+		field.String("age").
+			Annotations(
+				entgql.OrderField(entities.UserAgeField),
+			),
 	}
 }

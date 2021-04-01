@@ -28,12 +28,12 @@ type UserPagination struct {
 }
 
 const (
-	Name  OrderField = "NAME"
-	Email OrderField = "EMAIL"
-	Age   OrderField = "AGE"
+	UserNameField  string = "NAME"
+	UserEmailField string = "EMAIL"
+	UserAgeField   string = "AGE"
 )
 
 type UserOrder struct {
 	Direction *OrderDirection
-	Field     *OrderField
+	Field     *string
 }

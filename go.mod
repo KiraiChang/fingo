@@ -10,4 +10,5 @@ require (
 	github.com/kataras/iris/v12 v12.2.0-alpha2.0.20210318185337-484787e5a6d1
 	github.com/mattn/go-sqlite3 v1.14.6
 	github.com/vektah/gqlparser/v2 v2.1.0
+	github.com/vmihailenco/msgpack/v5 v5.2.0 // indirect
 )
