@@ -3,7 +3,8 @@ module github.com/KiraiChang/fingo
 go 1.16
 
 require (
-	entgo.io/ent v0.7.0
+	entgo.io/contrib v0.0.0-20210331144517-5fed95bad9d0 // indirect
+	entgo.io/ent v0.7.0 // indirect
 	github.com/99designs/gqlgen v0.13.0
 	github.com/Joker/hpp v1.0.0 // indirect
 	github.com/kataras/iris/v12 v12.2.0-alpha2.0.20210318185337-484787e5a6d1
