@@ -3,15 +3,60 @@
 # https://gqlgen.com/getting-started/
 
 type User {
-  id: ID!
+  id: Int!
   name: String!
   pwd: String!
   age: Int!
   email: String!
 }
 
+
+scalar Cursor
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: Cursor
+  endCursor: Cursor
+}
+
+type UserConnection {
+  totalCount: Int!
+  pageInfo: PageInfo!
+  edges: [UserEdge]
+}
+
+type UserEdge {
+  node: User
+  cursor: Cursor!
+}
+
+enum OrderDirection {
+    ASC
+    DESC
+}
+
+enum UserOrderField {
+    NAME
+    AGE
+    EMAIL
+}
+
+input UserOrder {
+  direction: OrderDirection!
+  field: UserOrderField
+}
+
 type Query {
-  users: [User!]!
+  user(id: Int!): User
+  userByIds(ids: [Int!]!): [User]!
+  users(
+    after: Cursor
+    first: Int
+    before: Cursor
+    last: Int
+    orderBy: UserOrder
+  ): UserConnection
 }
 
 input NewUser {
