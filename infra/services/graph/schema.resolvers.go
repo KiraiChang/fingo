@@ -13,7 +13,13 @@ import (
 )
 
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*ent.User, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.client.User.
+		Create().
+		SetName(input.Name).
+		SetAge(input.Age).
+		SetEmail(input.Email).
+		SetPwd(input.Pwd).
+		Save(ctx)
 }
 
 func (r *queryResolver) Users(ctx context.Context) ([]*ent.User, error) {

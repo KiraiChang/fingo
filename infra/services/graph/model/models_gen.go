@@ -3,6 +3,8 @@
 package model
 
 type NewUser struct {
-	Name string `json:"name"`
-	Pwd  string `json:"pwd"`
+	Name  string `json:"name"`
+	Pwd   string `json:"pwd"`
+	Age   int    `json:"age"`
+	Email string `json:"email"`
 }

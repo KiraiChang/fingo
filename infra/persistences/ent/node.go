@@ -82,7 +82,7 @@ func (u *User) Node(ctx context.Context) (node *Node, err error) {
 		return nil, err
 	}
 	node.Fields[3] = &Field{
-		Type:  "string",
+		Type:  "int",
 		Name:  "age",
 		Value: string(buf),
 	}

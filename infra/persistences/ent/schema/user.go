@@ -26,7 +26,7 @@ func (User) Fields() []ent.Field {
 			Annotations(
 				entgql.OrderField(entities.UserEmailField),
 			),
-		field.String("age").
+		field.Int("age").
 			Annotations(
 				entgql.OrderField(entities.UserAgeField),
 			),
