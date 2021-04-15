@@ -49,7 +49,6 @@ input UserOrder {
 
 type Query {
   user(id: Int!): User
-  userByIds(ids: [Int!]!): [User]!
   users(
     after: Cursor
     first: Int

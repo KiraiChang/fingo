@@ -5,7 +5,6 @@ package graph
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/KiraiChang/fingo/infra/persistences/ent"
 	"github.com/KiraiChang/fingo/infra/services/graph/generated"
@@ -24,10 +23,6 @@ func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) 
 
 func (r *queryResolver) User(ctx context.Context, id int) (*ent.User, error) {
 	return r.client.User.Get(ctx, id)
-}
-
-func (r *queryResolver) UserByIds(ctx context.Context, ids []int) ([]*ent.User, error) {
-	panic(fmt.Errorf("not implemented"))
 }
 
 func (r *queryResolver) Users(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int, orderBy *ent.UserOrder) (*ent.UserConnection, error) {
